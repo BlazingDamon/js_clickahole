@@ -1,138 +1,10 @@
 <html>
 <head>
-<style>
-body {
-	background-color: #B0976D;
-}
-h1 {
-	text-align: center;
-	font-size: 72px;
-	color: #24170A;
-}
-button {
-	text-align: center;
-}
-.button {
-  display: block;
-  border-radius: 4px;
-  background-color: #8A5925;
-  border: none;
-  color: #222222;
-  text-align: center;
-  font-size: 28px;
-  padding: 15px;
-  width: 250px;
-  transition: all 0.1s;
-  cursor: pointer;
-  margin: 0px 5px 0px 5px;
-}
-
-.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.1s;
-}
-
-.button span:after {
-  content: '»';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.1s;
-}
-
-.button:hover span {
-  padding-right: 25px;
-}
-
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
-}
-
-.h2-dirt {
-  text-align: center;
-  color: #4A3014;
-  font-size: 40px;
-  margin: 20px auto 5px auto;
-}
-
-.h2-stone {
-  text-align: center;
-  color: #353535;
-  font-size: 40px;
-  margin: 20px auto 5px auto;
-}
-
-.h2-diamond {
-  text-align: center;
-  color: #295663;
-  font-size: 40px;
-  margin: 20px auto 5px auto;
-}
-
-.h2-money {
-  text-align: center;
-  color: #186119;
-  font-size: 40px;
-  margin: 20px auto 5px auto;
-}
-
-#dirtButton {
-  background-color: #8A5925;
-}
-
-#stoneButton {
-  background-color: #646464;
-}
-
-#diamondButton {
-  background-color: #57AFC9;
-}
-
-#sellButton {
-  background-color: #1F8020;
-}
-
-#digButtons {
-  display: inline-block;
-  text-align: center;
-  padding: 2px;
-  list-style-type: none;
-}
-
-#digButtons li {
-  float: left;
-}
-
-#sellButtons {
-  display: inline-block;
-  text-align: center;
-  padding: 2px;
-  list-style-type: none;
-}
-
-#sellButtons li {
-  float: left;
-}
-
-#topRow {
-  text-align: center;
-}
-
-#sellRow {
-  text-align: center;
-}
-
-</style>
+	<link rel="stylesheet" type="text/css" href="theme.css">
 </head>
 
 <body>
 	<h1>Click A Hole</h1>
-
-	
 	<div id="topRow">
 		<ul id="digButtons">
 			<li>
@@ -149,8 +21,6 @@ button {
 			</li>
 		</ul>
 	</div>
-	
-	
 	<div id="sellRow">
 		<ul id="sellButtons">
 			<li>
@@ -159,39 +29,5 @@ button {
 			</li>
 		</ul>
 	</div>
-
-	<script>
-		var dirtCount=0;
-		var stoneCount=0;
-		var diamondCount=0;
-		var money=0;
-		function addDirt()
-		{
-			dirtCount += 1;
-			document.getElementById("dirtCount").innerHTML = "Dirt: " + dirtCount;
-		}
-		function addStone()
-		{
-			stoneCount += 1;
-			document.getElementById("stoneCount").innerHTML = "Stone: " + stoneCount;
-		}
-		function addDiamond()
-		{
-			diamondCount += 1;
-			document.getElementById("diamondCount").innerHTML = "Diamond: " + diamondCount;
-		}
-		function sell()
-		{
-			money += (dirtCount*10)/100;
-			money += (stoneCount*100)/100;
-			money += (diamondCount*1000)/100;
-			dirtCount = 0;
-			stoneCount = 0;
-			diamondCount = 0;
-			document.getElementById("dirtCount").innerHTML = "Dirt: " + dirtCount;
-			document.getElementById("stoneCount").innerHTML = "Stone: " + stoneCount;
-			document.getElementById("diamondCount").innerHTML = "Diamond: " + diamondCount;
-			document.getElementById("money").innerHTML = "Money: $" + money;
-		}
-	</script>
+	<script src="game.js"></script>
 </body>
